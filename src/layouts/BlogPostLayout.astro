@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+  publishDate: string;
+  author: string;
+  heroImage: string;
+  heroImageAlt: string;
+  href: string;
+}
+
+const { content } = Astro.props
+
+const permalink = "TODO"
+---
+
+<BaseLayout {content.title} {content.description} {permalink}>
+    <BlogPost title={content.title} author={content.author} heroImage={content.heroImage} publishDate={content.publishDate} heroImageAlt={content.heroImageAlt} href={content.authorRef}>
+      <slot />
+    </BlogPost>
+</BaseLayout>
