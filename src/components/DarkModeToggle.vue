@@ -7,7 +7,7 @@
     </span>
   </button>
 </template>
-<script setup>
+<script lang="ts" setup>
 import { useDark, useToggle } from "@vueuse/core";
 import MoonIcon from "./icons/MoonIcon.vue";
 import SunIcon from "./icons/SunIcon.vue";
