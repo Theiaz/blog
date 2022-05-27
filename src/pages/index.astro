@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPostPreview from '../components/BlogPostPreview.astro';
 
-let title = 'Example Blog';
+let title = 'Blog posts';
 let description = 'The perfect starter for your perfect blog.';
 let permalink = 'https://example.com/';
 
@@ -13,6 +13,12 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
 
 <BaseLayout title={title} description={description} permalink={permalink}>
 	<section aria-label="Blog post list">
-		{allPosts.map((p) => <BlogPostPreview post={p} />)}
+		{allPosts.map((p, index) => {
+			 return <div>
+				{index + 1 === allPosts.length && (<hr/>)}
+				<BlogPostPreview post={p} />
+			</div>
+			}
+		)}
 	</section>
 </BaseLayout>

@@ -2,15 +2,15 @@
 layout: ../../layouts/BlogPostLayout.astro
 setup: |
   import DarkModeToggle from '../../components/DarkModeToggle.vue'
-title: Title
+title: Teil 2
 author: Julian Schäfer
 authorRef: https://github.com/Theiaz
-description: Hello Description!
+description: This is so cool! and a very long text with some addtiotional characters and MMMMMMM monster mega wordddddddd!
 heroImage:
 heroImageAlt:
 publishDate: 20 May 2022
 draft: false,
-keywords: ["todo", "foo"]
+keywords: ["hub", "fbubba"]
 ---
 
 This is so cool! and a very long text with some addtiotional characters and MMMMMMM monster mega wordddddddd.

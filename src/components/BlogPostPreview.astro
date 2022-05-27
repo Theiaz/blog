@@ -6,13 +6,22 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<article class="border-2 border-solid border-slate-900 p-4">
+<article class="my-12">
   <header>
-    <p class="publish-date">{post.frontmatter.publishDate}</p>
     <a href={post.url}>
-      <h1 class="title">{post.frontmatter.title}</h1>
+      <h2 class="title">{post.frontmatter.title}</h2>
     </a>
+    <div class="text-sm my-2 italic">
+      <span class="">Published {post.frontmatter.publishDate}</span>
+      <span>|</span>
+      <span class="">Reading time x</span>
+
+
+      <ul class="flex flex-wrap gap-2">
+        {post.frontmatter.keywords.map((w) => <li>#{w}</li>)}
+      </ul>
+    </div>
   </header>
-  <p>{post.frontmatter.description}</p>
+  <p class="my-4">{post.frontmatter.description}</p>
   <a href={post.url}>Read more</a>
 </article>
