@@ -13,12 +13,12 @@ export interface Props {
 const { title, description, permalink, lang } = Astro.props;
 ---
 
-<html lang={lang || "en"}>
+<html lang={lang || "en"} class="h-full">
   <head>
     <Head {title} {description} {permalink} />
   </head>
 
-  <body class="bg-slate-200 dark:bg-blue-900">
+  <body class="h-full grid bg-slate-200 dark:bg-blue-900">
     <Header />
     <main>
       <slot />
@@ -26,3 +26,8 @@ const { title, description, permalink, lang } = Astro.props;
     <Footer />
   </body>
 </html>
+<style>
+body {
+  grid-template-rows: auto 1fr auto;
+}
+</style>

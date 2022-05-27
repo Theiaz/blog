@@ -6,7 +6,7 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<article class="bg-green-300 border-2 border-solid border-slate-900 p-4">
+<article class="border-2 border-solid border-slate-900 p-4">
   <header>
     <p class="publish-date">{post.frontmatter.publishDate}</p>
     <a href={post.url}>
