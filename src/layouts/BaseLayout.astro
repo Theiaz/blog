@@ -18,9 +18,9 @@ const { title, description, permalink, lang } = Astro.props;
     <Head {title} {description} {permalink} />
   </head>
 
-  <body class="h-full grid bg-light-primary text-light-secondary dark:bg-dark-primary dark:text-dark-secondary">
+  <body class="h-full grid bg-light-primary dark:bg-dark-primary text-light-secondary dark:text-dark-secondary">
     <Header />
-    <main>
+    <main class="w-10/12 max-w-prose justify-self-center">
       <slot />
     </main>
     <Footer />

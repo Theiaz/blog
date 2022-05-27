@@ -13,7 +13,7 @@ draft: false,
 keywords: ["todo"]
 ---
 
-This is so cool!
+This is so cool! and a very long text with some addtiotional characters and MMMMMMM monster mega wordddddddd.
 
 Do variables work {frontmatter.value * 2}?
 

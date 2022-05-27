@@ -1,3 +1,7 @@
+html {
+  font-size: 18px;
+}
+
 button,
 a {
   @apply hover:text-light-accent dark:hover:text-dark-accent hover:underline hover:decoration-light-accent dark:hover:decoration-dark-accent hover:decoration-4;
