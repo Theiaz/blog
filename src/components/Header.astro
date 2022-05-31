@@ -1,9 +1,13 @@
 ---
-import DarkModeToggle from "../components/DarkModeToggle.vue";
+import DarkModeToggle from "./DarkModeToggle.vue";
+import MobileNavbar from "./MobileNavbar.vue";
 ---
 
 <header>
-  <nav class="flex items-center gap-8 list-none font-medium text-lg p-8">
+  <MobileNavbar client:load/>
+  <nav
+    class="hidden sm:flex items-center gap-8 list-none font-medium text-lg p-8"
+  >
     <li>
       <a href="/">
         <span>Logo</span>
@@ -13,7 +17,7 @@ import DarkModeToggle from "../components/DarkModeToggle.vue";
     <li class="ml-auto h-full">
       <DarkModeToggle client:load />
     </li>
-    <li>    
+    <li>
       <a href="https://github.com/Theiaz" class="flex">
         <svg
           class="fill-current w-5 h-5 mr-2"

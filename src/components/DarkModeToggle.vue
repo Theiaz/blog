@@ -3,7 +3,7 @@
     <span class="flex items-center gap-2">
       <MoonIcon v-if="isDark" />
       <SunIcon v-else />
-      {{ isDark ? "Dark" : "Light" }}
+      <span class="hidden sm:inline"> {{ isDark ? "Dark" : "Light" }}</span>
     </span>
   </button>
 </template>
