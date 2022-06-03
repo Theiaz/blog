@@ -3,7 +3,7 @@
     <DarkModeToggle class="p-2" />
     <button class="p-2" @click="isDisplayed = !isDisplayed">
       <svg
-        class="w-full fill-current"
+        class="fill-current"
         width="1.5em"
         height="1.5em"
         xmlns="http://www.w3.org/2000/svg"
