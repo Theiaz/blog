@@ -9,7 +9,7 @@ description: This is so cool! and a very long text with some addtiotional charac
 heroImage:
 heroImageAlt:
 publishDate: 20 May 2022
-draft: false,
+draft: false
 keywords: ["hub", "fbubba"]
 ---
 

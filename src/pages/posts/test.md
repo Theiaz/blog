@@ -9,7 +9,7 @@ description: Hello Description!
 heroImage:
 heroImageAlt:
 publishDate: 20 May 2022
-draft: false,
+draft: false
 keywords: ["todo", "foo"]
 ---
 
