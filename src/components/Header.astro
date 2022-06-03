@@ -1,10 +1,13 @@
 ---
 import DarkModeToggle from "./DarkModeToggle.vue";
 import MobileNavbar from "./MobileNavbar.vue";
+import Teleport from "vue";
 ---
 
 <header>
-  <MobileNavbar client:only="vue"/>
+  <MobileNavbar client:load>
+    <DarkModeToggle client:only="vue" class="p-2" />
+  </MobileNavbar>
   <nav
     class="hidden sm:flex items-center gap-8 list-none font-medium text-lg p-8"
   >

@@ -1,6 +1,6 @@
 <template>
   <div class="sm:hidden flex gap-4 justify-end m-4">
-    <DarkModeToggle class="p-2" />
+    <slot></slot>
     <button class="p-2" @click="isDisplayed = !isDisplayed">
       <svg
         class="fill-current"
