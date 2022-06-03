@@ -1,8 +1,6 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-setup: |
-  import DarkModeToggle from '../../components/DarkModeToggle.vue'
-title: Teil 2
+title: Ohne Vue
 author: Julian Schäfer
 authorRef: https://github.com/Theiaz
 description: This is so cool! and a very long text with some addtiotional characters and MMMMMMM monster mega wordddddddd!
@@ -25,5 +23,3 @@ function returnSeven() {
   return x;
 }
 ```
-
-Some custom JS: <DarkModeToggle client:load/>
