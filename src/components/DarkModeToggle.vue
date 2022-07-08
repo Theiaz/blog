@@ -1,10 +1,7 @@
 <template>
   <button @click="toggleDark()">
-    <span class="flex items-center gap-2">
-      <MoonIcon v-if="isDark" />
-      <SunIcon v-else />
-      <span class="hidden sm:inline"> {{ isDark ? "Dark" : "Light" }}</span>
-    </span>
+    <MoonIcon v-if="isDark" class="hover:scale-110" />
+    <SunIcon v-else class="hover:scale-110" />
   </button>
 </template>
 <script lang="ts" setup>

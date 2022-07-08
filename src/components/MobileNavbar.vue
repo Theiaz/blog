@@ -27,7 +27,7 @@
       <li>
         <a href="https://github.com/Theiaz" class="flex">
           <svg
-            class="fill-current w-5 h-5 mr-2"
+            class="fill-current w-5 h-5 mr-2 hover:scale-110"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
           >
@@ -44,7 +44,6 @@
 
 <script setup lang="ts">
 import { ref, watch } from "vue";
-import DarkModeToggle from "./DarkModeToggle.vue";
 
 let isDisplayed = ref(false);
 
