@@ -1,6 +1,7 @@
 ---
 import Head from "../components/Head.astro";
 import Header from "../components/Header.astro";
+import ScrollToTopButton from "../components/ScrollToTopButton.vue";
 
 export interface Props {
   title: string;
@@ -43,6 +44,7 @@ const { title, description, permalink, lang } = Astro.props;
       <h1>{title}</h1>
       <slot></slot>
     </main>
+    <ScrollToTopButton client:load />
     <style>
       body {
         grid-template-rows: auto 1fr auto;

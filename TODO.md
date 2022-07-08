@@ -8,7 +8,7 @@
   - optional: beim scrollen nach unten werden einzelne Artikel reingeschoben
 - Pagination Posts auf Hauptseite
 - Logo & Favicon
-- rechts unten einen Scroll-To-Top-Button --> https://ashraful.dev/
+- ~~rechts unten einen Scroll-To-Top-Button~~ --> https://ashraful.dev/
 - Kommentar-Funktion
 - Unread-Feature pro Blogpost --> https://una.im/
 - Labelsammlung auf Hauptseite um nur nach Blog-Posts mit diesem Label zu filtern --> https://www.maxwellantonucci.com/writing/
