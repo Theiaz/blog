@@ -12,13 +12,20 @@ export interface Props {
   href: string;
 }
 
-const { content } = Astro.props
+const { content } = Astro.props;
 
-const permalink = "TODO"
+const permalink = "TODO";
 ---
 
 <BaseLayout {content.title} {content.description} {permalink}>
-    <BlogPost title={content.title} author={content.author} heroImage={content.heroImage} publishDate={content.publishDate} heroImageAlt={content.heroImageAlt} href={content.authorRef}>
-      <slot />
-    </BlogPost>
+  <BlogPost
+    title={content.title}
+    author={content.author}
+    heroImage={content.heroImage}
+    publishDate={content.publishDate}
+    heroImageAlt={content.heroImageAlt}
+    href={content.authorRef}
+  >
+    <slot></slot>
+  </BlogPost>
 </BaseLayout>

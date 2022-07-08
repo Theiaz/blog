@@ -1,6 +1,5 @@
 ---
 import Head from "../components/Head.astro";
-import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
 export interface Props {
@@ -18,30 +17,36 @@ const { title, description, permalink, lang } = Astro.props;
     <script is:inline>
       let preferredTheme;
       try {
-        preferredTheme = localStorage.getItem('vueuse-color-scheme');
-      } catch (err) { }
-      const hasDarkQuery =  window.matchMedia('(prefers-color-scheme: dark)').matches;
+        preferredTheme = localStorage.getItem("vueuse-color-scheme");
+      } catch (err) {}
+      const hasDarkQuery = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
 
-      if (preferredTheme === 'dark' || (preferredTheme !== 'light' && hasDarkQuery)) {
-        document.querySelector("html").classList.add("dark")
+      if (
+        preferredTheme === "dark" ||
+        (preferredTheme !== "light" && hasDarkQuery)
+      ) {
+        document.querySelector("html").classList.add("dark");
       } else {
-        document.querySelector("html").classList.remove("dark")
+        document.querySelector("html").classList.remove("dark");
       }
     </script>
     <Head {title} {description} {permalink} />
   </head>
 
-  <body class="h-full grid bg-light-primary dark:bg-dark-primary text-light-secondary dark:text-dark-secondary">
-
+  <body
+    class="h-full grid bg-light-primary text-light-secondary dark:bg-dark-primary dark:text-dark-secondary"
+  >
     <Header />
     <main class="w-10/12 max-w-prose justify-self-center">
       <h1>{title}</h1>
-      <slot />
+      <slot></slot>
     </main>
+    <style>
+      body {
+        grid-template-rows: auto 1fr auto;
+      }
+    </style>
   </body>
 </html>
-<style>
-body {
-  grid-template-rows: auto 1fr auto;
-}
-</style>
