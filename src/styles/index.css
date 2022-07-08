@@ -21,6 +21,27 @@
   a {
     @apply underline decoration-2 hover:text-light-accent dark:hover:text-dark-accent hover:underline hover:decoration-light-accent dark:hover:decoration-dark-accent;
   }
+
+  a:not(.iconAnchor) {
+    background-color: transparent;
+    position: relative;
+    padding: 0px 1px;
+    transition: color ease 0.3s;
+  }
+
+  a:not(.iconAnchor)::after {
+    @apply absolute bottom-0 h-0 -left-[1.5px] -right-[1.5px] bg-light-accent dark:bg-dark-accent -z-10;
+    content: "";
+    transition: all ease 0.3s;
+  }
+
+  a:not(.iconAnchor):hover {
+    @apply text-light-primary dark:text-dark-primary;
+  }
+
+  a:not(.iconAnchor):hover::after {
+    @apply h-full;
+  }
 }
 
 @tailwind components;

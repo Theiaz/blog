@@ -8,9 +8,10 @@ const { post } = Astro.props;
 
 <article class="my-12">
   <header>
-    <a href={post.url}>
-      <h2 class="title">{post.frontmatter.title}</h2>
-    </a>
+    <h2 class="title">
+      <a href={post.url}> {post.frontmatter.title}</a>
+    </h2>
+
     <div class="text-sm my-2 italic">
       <span class="">Published {post.frontmatter.publishDate}</span>
       <span>|</span>
