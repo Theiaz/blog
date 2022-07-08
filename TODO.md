@@ -7,7 +7,7 @@
   - beweglicher Hintergrund (mit Glassmorphism)
   - optional: beim scrollen nach unten werden einzelne Artikel reingeschoben
 - Pagination Posts auf Hauptseite
-- Logo
+- Logo & Favicon
 - rechts unten einen Scroll-To-Top-Button --> https://ashraful.dev/
 - Kommentar-Funktion
 - Unread-Feature pro Blogpost --> https://una.im/
