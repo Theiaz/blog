@@ -1,0 +1,16 @@
+- Styling
+  - Glassmorphism --> https://astrosaurus.me/, https://amreshsinha.github.io/glassFolio/, https://delba.dev/
+- Animationen
+  - beim Umschalten des Dark Modes --> https://matan.io/posts
+  - Burger-Menu (Öffnen/Schließen) --> https://leerob.io/, https://www.compiled.blog/
+  - Mouse-Hover markiert Überschriften --> https://sobolevn.me/
+  - beweglicher Hintergrund (mit Glassmorphism)
+  - optional: beim scrollen nach unten werden einzelne Artikel reingeschoben
+- Pagination Posts auf Hauptseite
+- Logo
+- rechts unten einen Scroll-To-Top-Button --> https://ashraful.dev/
+- Kommentar-Funktion
+- Unread-Feature pro Blogpost --> https://una.im/
+- Labelsammlung auf Hauptseite um nur nach Blog-Posts mit diesem Label zu filtern --> https://www.maxwellantonucci.com/writing/
+- Subscribe-Funktion
+- Barrierefreiheit (Aria Labels etc)
