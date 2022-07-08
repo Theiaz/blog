@@ -1,7 +1,10 @@
 # TODOS
+
 ## Bugs
 
 - auf mobile bei BurgerMenu-Artikel zu kleine Schriftart/Zoom
+- Main geht bis ans Seitenende/Bottom --> Spacing
+- Seperator zwischen Blogposts nicht immer vorhanden
 
 ## Must:
 
@@ -26,4 +29,3 @@
 - Unread-Feature pro Blogpost --> https://una.im/
 - Labelsammlung auf Hauptseite um nur nach Blog-Posts mit diesem Label zu filtern --> https://www.maxwellantonucci.com/writing/
 - Subscribe-Funktion
-

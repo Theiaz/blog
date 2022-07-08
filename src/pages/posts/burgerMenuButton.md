@@ -13,7 +13,7 @@ keywords: ["CSS"]
 
 References: https://www.compiled.blog/
 
-```javascript
+```vue
 <template>
   <button class="p-2" @click="isDisplayed = !isDisplayed">
     <div
@@ -55,5 +55,4 @@ const isDisplayed = ref(false);
   transform: translateX(3.5px) translateY(-1px) rotate(135deg);
 }
 </style>
-
 ```

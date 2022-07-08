@@ -21,6 +21,10 @@
     @apply p-4;
   }
 
+  code {
+    @apply text-sm;
+  }
+
   button,
   a {
     @apply underline decoration-2 hover:text-light-accent dark:hover:text-dark-accent hover:underline hover:decoration-light-accent dark:hover:decoration-dark-accent;
