@@ -1,17 +1,9 @@
 <template>
   <div class="sm:hidden flex gap-4 justify-end m-4">
     <slot></slot>
-    <button class="p-2" @click="isDisplayed = !isDisplayed">
-      <svg
-        class="fill-current"
-        width="1.5em"
-        height="1.5em"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-      >
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-      </svg>
-    </button>
+    <MobileNavbarButton
+      @is-displayed="toggleNavbar($event)"
+    ></MobileNavbarButton>
   </div>
   <div
     v-show="isDisplayed"
@@ -42,10 +34,15 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref, watch } from "vue";
+import MobileNavbarButton from "./MobileNavbarButton.vue";
 
 let isDisplayed = ref(false);
+
+function toggleNavbar(event) {
+  this.isDisplayed = event.value;
+}
 
 watch(isDisplayed, async (value) => {
   if (value) {

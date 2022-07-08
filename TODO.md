@@ -2,7 +2,7 @@
   - Glassmorphism --> https://astrosaurus.me/, https://amreshsinha.github.io/glassFolio/, https://delba.dev/
 - Animationen
   - beim Umschalten des Dark Modes --> https://matan.io/posts
-  - Burger-Menu (Öffnen/Schließen) --> https://leerob.io/, https://www.compiled.blog/
+  - ~~Burger-Menu (Öffnen/Schließen)~~ --> https://leerob.io/, https://www.compiled.blog/
   - Mouse-Hover markiert Überschriften --> https://sobolevn.me/
   - beweglicher Hintergrund (mit Glassmorphism)
   - optional: beim scrollen nach unten werden einzelne Artikel reingeschoben
