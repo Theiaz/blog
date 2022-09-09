@@ -2,7 +2,7 @@
   <Transition name="fade">
     <button
       v-show="isScrolled"
-      class="fixed bottom-8 right-8 border-none rounded-full p-2 bg-light-secondary dark:bg-dark-secondary"
+      class="fixed bottom-8 right-8 border-none rounded-full p-2 bg-light-secondary dark:bg-dark-secondary hover:bg-light-accent dark:hover:bg-light-accent"
       @click="scrollToTop"
     >
       <ChevronUpIcon

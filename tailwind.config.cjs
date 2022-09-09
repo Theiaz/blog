@@ -12,12 +12,12 @@ module.exports = {
     },
     extend: {
       colors: {
-        "light-primary": "#fff",
-        "light-secondary": "#1d3354ff",
-        "light-accent": "#8c0105ff",
-        "dark-primary": "#1d3354ff",
-        "dark-secondary": "#e9fff9ff",
-        "dark-accent": "#d64045ff",
+        "light-primary": "#eee",
+        "light-secondary": "#111",
+        "light-accent": "#FCA311",
+        "dark-primary": "#111",
+        "dark-secondary": "#eee",
+        "dark-accent": "#FCA311",
       },
     },
   },
