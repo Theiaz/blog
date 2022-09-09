@@ -2,7 +2,7 @@
 
 @layer base {
   html {
-    font-size: 18px;
+    @apply text-[18px];
   }
 
   h1 {
@@ -31,9 +31,7 @@
   }
 
   a:not(.iconAnchor) {
-    background-color: transparent;
-    position: relative;
-    padding: 0px 1px;
+    @apply inline-block relative px-0 py-[1px] bg-transparent;
     transition: color ease 0.3s;
   }
 

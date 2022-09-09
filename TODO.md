@@ -11,7 +11,6 @@
 
 - auf mobile bei BurgerMenu-Artikel zu kleine Schriftart/Zoom
 - Main geht bis ans Seitenende/Bottom --> Spacing
-- Seperator zwischen Blogposts nicht immer vorhanden
 
 ### Must:
 
