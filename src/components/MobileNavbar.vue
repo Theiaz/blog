@@ -41,7 +41,7 @@ import MobileNavbarButton from "./MobileNavbarButton.vue";
 let isDisplayed = ref(false);
 
 function toggleNavbar(event) {
-  this.isDisplayed = event.value;
+  isDisplayed.value = event.value;
 }
 
 watch(isDisplayed, async (value) => {
