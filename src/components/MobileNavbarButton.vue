@@ -1,5 +1,5 @@
 <template>
-  <button class="p-2" @click="isDisplayed = !isDisplayed">
+  <button class="p-2 nav-button" @click="isDisplayed = !isDisplayed">
     <div
       class="top-stroke block w-[28px] h-[2px] bg-light-secondary dark:bg-dark-secondary"
       :class="{ 'top-stroke--active': isDisplayed }"
@@ -43,5 +43,9 @@ watch(isDisplayed, () => {
 
 .bottom-stroke--active {
   transform: translateX(3.5px) translateY(-1px) rotate(135deg);
+}
+
+.nav-button:hover div {
+  @apply bg-light-accent dark:bg-dark-accent;
 }
 </style>
