@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 setup: |
-  import DarkModeToggle from '../../components/DarkModeToggle.vue'
+  import DarkModeToggle from '../../components/features/DarkModeToggle.vue'
 title: Title1
 author: Julian Schäfer
 authorRef: https://github.com/Theiaz
@@ -15,7 +15,7 @@ keywords: ["todo", "foo"]
 
 This is so cool! and a very long text with some addtiotional characters and MMMMMMM monster mega wordddddddd.
 
-Do variables work {frontmatter.value * 2}?
+Do variables work {frontmatter.value \* 2}?
 
 ```javascript
 // Example JavaScript

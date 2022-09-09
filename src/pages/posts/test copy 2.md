@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 setup: |
-  import DarkModeToggle from '../../components/DarkModeToggle.vue'
+  import DarkModeToggle from '../../components/features/DarkModeToggle.vue'
 title: Title1
 author: Julian Schäfer
 authorRef: https://github.com/Theiaz

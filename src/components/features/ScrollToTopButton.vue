@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import ChevronUpIcon from "./icons/ChevronUpIcon.vue";
+import ChevronUpIcon from "../icons/ChevronUpIcon.vue";
 import { ref, onMounted, onUnmounted } from "vue";
 
 function scrollToTop() {

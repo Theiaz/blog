@@ -6,8 +6,8 @@
 </template>
 <script setup>
 import { useDark, useToggle } from "@vueuse/core";
-import MoonIcon from "./icons/MoonIcon.vue";
-import SunIcon from "./icons/SunIcon.vue";
+import MoonIcon from "../icons/MoonIcon.vue";
+import SunIcon from "../icons/SunIcon.vue";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
