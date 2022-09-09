@@ -11,17 +11,17 @@
     "format": "prettier .  --write"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^0.2.2",
-    "@astrojs/vue": "^0.1.5",
-    "astro": "^1.0.0-beta.40",
-    "eslint": "^8.19.0",
+    "@astrojs/tailwind": "^1.0.0",
+    "@astrojs/vue": "^1.0.1",
+    "astro": "^1.1.7",
+    "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-vue": "^9.1.0",
+    "eslint-plugin-vue": "^9.4.0",
     "prettier": "^2.7.1",
-    "prettier-plugin-astro": "0.1.1",
-    "vue": "^3.2.37"
+    "prettier-plugin-astro": "^0.5.4",
+    "vue": "^3.2.38"
   },
   "dependencies": {
-    "@vueuse/core": "^8.9.0"
+    "@vueuse/core": "^9.2.0"
   }
 }
