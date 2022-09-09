@@ -7,7 +7,7 @@ let description = "The perfect starter for your perfect blog.";
 let permalink = "https://example.com/";
 
 // Data Fetching: List all Markdown posts in the repo.
-let allPosts = await Astro.glob("./posts/*.md");
+let allPosts = await Astro.glob("./posts/*.mdx");
 allPosts = allPosts.sort(
   (a, b) =>
     new Date(b.frontmatter.publishDate).valueOf() -

@@ -1,7 +1,5 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-setup: |
-  import DarkModeToggle from '../../components/features/DarkModeToggle.vue'
 title: Title1
 author: Julian Schäfer
 authorRef: https://github.com/Theiaz
@@ -11,11 +9,10 @@ heroImageAlt:
 publishDate: 20 May 2022
 draft: false
 keywords: ["todo", "foo"]
+value: 2
 ---
 
-This is so cool! and a very long text with some addtiotional characters and MMMMMMM monster mega wordddddddd.
-
-Do variables work {frontmatter.value * 2}?
+import DarkModeToggle from "../../components/features/DarkModeToggle.vue";
 
 ```javascript
 // Example JavaScript
