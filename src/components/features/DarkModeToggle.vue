@@ -1,5 +1,5 @@
 <template>
-  <button @click="toggleDark()">
+  <button aria-label="Darkmode Toggle" @click="toggleDark()">
     <MoonIcon v-if="isDark" class="hover:scale-110" />
     <SunIcon v-else class="hover:scale-110" />
   </button>

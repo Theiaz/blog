@@ -18,7 +18,7 @@
   - ~~rechts unten einen Scroll-To-Top-Button~~ --> https://ashraful.dev/
 - Logo & Favicon
 - ~~Hero Image~~
-- Barrierefreiheit (Aria Labels etc)
+- ~~Barrierefreiheit (Aria Labels etc)~~
 - ~~Draft Mechanismus~~
 - ~~Git Pipeline mit check?~~
 

@@ -1,5 +1,9 @@
 <template>
-  <button class="p-3 nav-button" @click="isDisplayed = !isDisplayed">
+  <button
+    class="p-3 nav-button"
+    aria-label="Mobile Navbar Toggle"
+    @click="isDisplayed = !isDisplayed"
+  >
     <div
       class="top-stroke block w-[28px] h-[2px] bg-light-secondary dark:bg-dark-secondary"
       :class="{ 'top-stroke--active': isDisplayed }"
