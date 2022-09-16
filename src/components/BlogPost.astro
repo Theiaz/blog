@@ -5,7 +5,7 @@ export interface Props {
   author: string;
   publishDate: string;
   heroImage?: string;
-  heroImageAlt: string;
+  heroImageAlt?: string;
   isExternalHeroImg: boolean;
   href: string;
 }
@@ -14,7 +14,7 @@ const {
   author,
   publishDate,
   heroImage,
-  heroImageAlt,
+  heroImageAlt = "",
   isExternalHeroImg,
   title,
   href,
