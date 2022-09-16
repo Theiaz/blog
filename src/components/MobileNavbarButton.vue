@@ -1,5 +1,5 @@
 <template>
-  <button class="p-2 nav-button" @click="isDisplayed = !isDisplayed">
+  <button class="p-3 nav-button" @click="isDisplayed = !isDisplayed">
     <div
       class="top-stroke block w-[28px] h-[2px] bg-light-secondary dark:bg-dark-secondary"
       :class="{ 'top-stroke--active': isDisplayed }"
@@ -30,7 +30,7 @@ watch(isDisplayed, () => {
 }
 
 .top-stroke {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 .top-stroke--active {
@@ -38,7 +38,7 @@ watch(isDisplayed, () => {
 }
 
 .bottom-stroke {
-  transform: translateY(5px);
+  transform: translateY(6px);
 }
 
 .bottom-stroke--active {
