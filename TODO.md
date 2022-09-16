@@ -17,10 +17,10 @@
   - ~~Mouse-Hover markiert Überschriften~~ --> https://sobolevn.me/
   - ~~rechts unten einen Scroll-To-Top-Button~~ --> https://ashraful.dev/
 - Logo & Favicon
-- ~Hero Image~
+- ~~Hero Image~~
 - Barrierefreiheit (Aria Labels etc)
-- ~Draft Mechanismus~
-- Git Pipeline mit check?
+- ~~Draft Mechanismus~~
+- ~~Git Pipeline mit check?~~
 
 ### Can:
 

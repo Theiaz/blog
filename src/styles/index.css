@@ -17,15 +17,6 @@
     @apply text-lg;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply mt-4 mb-2;
-  }
-
   pre {
     @apply p-4;
   }

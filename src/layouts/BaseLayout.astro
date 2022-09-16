@@ -45,7 +45,7 @@ const { title, description, lang = "en" } = Astro.props;
       <h1>{title}</h1>
       <slot />
     </main>
-    <ScrollToTopButton client:load />
+    <ScrollToTopButton client:idle />
     <style>
       body {
         grid-template-rows: auto 1fr auto;

@@ -4,7 +4,7 @@ import MobileNavbar from "./MobileNavbar.vue";
 ---
 
 <header>
-  <MobileNavbar client:load>
+  <MobileNavbar client:media="(max-width: 639px)">
     <DarkModeToggle client:only="vue" class="p-2" />
   </MobileNavbar>
   <nav
