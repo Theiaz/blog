@@ -20,7 +20,11 @@ const { post } = Astro.props;
       <span class="">Reading time x</span>
 
       <ul class="flex flex-wrap gap-2">
-        {post.frontmatter.keywords.map((w: String) => <li>#{w}</li>)}
+        {
+          post.frontmatter.keywords.map((w: unknown) => {
+            <li>#{w}</li>;
+          })
+        }
       </ul>
     </div>
   </header>
