@@ -19,11 +19,12 @@
 - Logo & Favicon
 - ~Hero Image~
 - Barrierefreiheit (Aria Labels etc)
-- Anchortags pro Überschrift (markieren/kopieren) --> https://igor.dev/posts/experiences-web-frameworks-future-me/#experiences
-- Draft Mechanismus
+- ~Draft Mechanismus~
+- Git Pipeline mit check?
 
 ### Can:
 
+- Anchortags pro Überschrift (markieren/kopieren) --> https://igor.dev/posts/experiences-web-frameworks-future-me/#experiences
 - Lesezeit
 - kleine Anzeige der Uhrzeit mit `useNow` von vueuse
 - Animationen

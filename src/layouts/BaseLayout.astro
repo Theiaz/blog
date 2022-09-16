@@ -6,11 +6,10 @@ import ScrollToTopButton from "../components/features/ScrollToTopButton.vue";
 export interface Props {
   title: string;
   description: string;
-  permalink?: string;
   lang?: string;
 }
 
-const { title, description, permalink, lang = "en" } = Astro.props;
+const { title, description, lang = "en" } = Astro.props;
 ---
 
 <html lang={lang} class="h-full">
@@ -33,7 +32,7 @@ const { title, description, permalink, lang = "en" } = Astro.props;
         document.querySelector("html").classList.remove("dark");
       }
     </script>
-    <Head title={title} description={description} permalink={permalink} />
+    <Head title={title} description={description} />
   </head>
 
   <body
