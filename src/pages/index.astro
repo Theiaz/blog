@@ -4,7 +4,6 @@ import BlogPostPreview from "../components/BlogPostPreview.astro";
 
 let title = "Blog posts";
 let description = "The perfect starter for your perfect blog.";
-let permalink = "https://example.com/";
 
 // Data Fetching: List all Markdown posts in the repo.
 let allPosts = await Astro.glob("./posts/*.mdx");
@@ -15,10 +14,10 @@ allPosts = allPosts.sort(
 );
 ---
 
-<BaseLayout title={title} description={description} permalink={permalink}>
+<BaseLayout title={title} description={description}>
   <section aria-label="Blog post list" class="grid gap-4 mt-4">
     {
-      allPosts.map((p, index) => {
+      allPosts.map((p) => {
         return <BlogPostPreview post={p} />;
       })
     }

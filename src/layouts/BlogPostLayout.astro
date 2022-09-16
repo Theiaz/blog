@@ -9,15 +9,14 @@ export interface Props {
   author: string;
   heroImage: string;
   heroImageAlt: string;
+  isExternalHeroImg: boolean;
   href: string;
 }
 
 const { content } = Astro.props;
-
-const permalink = "TODO";
 ---
 
-<BaseLayout {content.title} {content.description} {permalink}>
+<BaseLayout {content.title} {content.description}>
   <BlogPost
     title={content.title}
     author={content.author}
@@ -25,7 +24,8 @@ const permalink = "TODO";
     publishDate={content.publishDate}
     heroImageAlt={content.heroImageAlt}
     href={content.authorRef}
+    isExternalHeroImg={content.isExternalHeroImg}
   >
-    <slot></slot>
+    <slot />
   </BlogPost>
 </BaseLayout>

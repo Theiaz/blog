@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
+    "check": "astro check && tsc --noEmit",
     "build": "astro build",
     "preview": "astro preview",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
     "format": "prettier .  --write"
   },
   "devDependencies": {
+    "@astrojs/image": "^0.7.0",
     "@astrojs/tailwind": "^1.0.0",
     "@astrojs/vue": "^1.0.1",
     "astro": "^1.1.7",

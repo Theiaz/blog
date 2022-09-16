@@ -1,31 +1,37 @@
 ---
+import PictureWithLink from "./features/PictureWithLink.astro";
 export interface Props {
   title: string;
   author: string;
   publishDate: string;
   heroImage?: string;
   heroImageAlt?: string;
+  isExternalHeroImg: boolean;
   href: string;
 }
 
-const { author, publishDate, heroImage, heroImageAlt, title, href } =
-  Astro.props;
+const {
+  author,
+  publishDate,
+  heroImage,
+  heroImageAlt,
+  isExternalHeroImg,
+  title,
+  href,
+} = Astro.props;
 ---
 
 <article>
   <header>
     {
       heroImage && (
-        <img
-          width="720"
-          height="420"
-          loading="lazy"
+        <PictureWithLink
           src={heroImage}
           alt={heroImageAlt}
+          isExternalSrc={isExternalHeroImg}
         />
       )
     }
-
     <h1 class="my-0">{title}</h1>
     <div class="italic flex gap-2">
       <p>{publishDate}</p>

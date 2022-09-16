@@ -17,9 +17,10 @@
   - ~~Mouse-Hover markiert Überschriften~~ --> https://sobolevn.me/
   - ~~rechts unten einen Scroll-To-Top-Button~~ --> https://ashraful.dev/
 - Logo & Favicon
-- Hero Image
+- ~Hero Image~
 - Barrierefreiheit (Aria Labels etc)
 - Anchortags pro Überschrift (markieren/kopieren) --> https://igor.dev/posts/experiences-web-frameworks-future-me/#experiences
+- Draft Mechanismus
 
 ### Can:
 
@@ -38,3 +39,4 @@
   - ShareAPI
 - Parallax-Effect --> ggf. bei Blogeinträgen mit HeroImage
 - Pagination Posts auf Hauptseite
+- vue-tsc `npm i --save-dev vue-tsc` installieren https://docs.astro.build/en/guides/typescript/#type-imports
