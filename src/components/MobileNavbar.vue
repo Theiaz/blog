@@ -1,5 +1,5 @@
 <template>
-  <div class="sm:hidden flex gap-4 justify-end m-4">
+  <div class="sm:hidden flex gap-4 justify-end px-4 py-8 sm:p-8">
     <slot></slot>
     <MobileNavbarButton
       @is-displayed="toggleNavbar($event)"

@@ -14,20 +14,26 @@ const { author, publishDate, heroImage, heroImageAlt, title, href } =
 
 <article>
   <header>
-    {heroImage && (
-      <img
-        width="720"
-        height="420"
-        loading="lazy"
-        src={heroImage}
-        alt={heroImageAlt}
-      />
-    )}
-    <p>{publishDate}</p>
-    <h1>{title}</h1>
-    <a href={href}>{author}</a>
+    {
+      heroImage && (
+        <img
+          width="720"
+          height="420"
+          loading="lazy"
+          src={heroImage}
+          alt={heroImageAlt}
+        />
+      )
+    }
+
+    <h1 class="my-0">{title}</h1>
+    <div class="italic flex gap-2">
+      <p>{publishDate}</p>
+      <span>|</span>
+      <a href={href}>{author}</a>
+    </div>
   </header>
-  <div>
-    <slot></slot>
-  </div>
+  <section class="mt-8">
+    <slot />
+  </section>
 </article>

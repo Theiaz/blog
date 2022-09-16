@@ -2,36 +2,31 @@
 
 ## Organisatorisches
 
-- vor Veröffentlichung 
-  - auf PW prüfen
+- vor Veröffentlichung
+  - Git Historie auf PW prüfen
   - Github-Einstellungen (Branch Protection etc.)
 
 ## Code
-### Bugs
 
-- auf mobile bei BurgerMenu-Artikel zu kleine Schriftart/Zoom
-- Main geht bis ans Seitenende/Bottom --> Spacing
+### Bugs
 
 ### Must:
 
-- Styling
-  - Glassmorphism --> https://astrosaurus.me/, https://amreshsinha.github.io/glassFolio/, https://delba.dev/
 - Animationen
-  - beim Umschalten des Dark Modes --> https://matan.io/posts
   - ~~Burger-Menu (Öffnen/Schließen)~~ --> https://leerob.io/, https://www.compiled.blog/
   - ~~Mouse-Hover markiert Überschriften~~ --> https://sobolevn.me/
-    - Bug: bei mehrzeiligem Layout wird zweite Zeile nicht angezeigt
-    - ~~rechts unten einen Scroll-To-Top-Button~~ --> https://ashraful.dev/
+  - ~~rechts unten einen Scroll-To-Top-Button~~ --> https://ashraful.dev/
 - Logo & Favicon
-- Pagination Posts auf Hauptseite
+- Hero Image
 - Barrierefreiheit (Aria Labels etc)
 - Anchortags pro Überschrift (markieren/kopieren) --> https://igor.dev/posts/experiences-web-frameworks-future-me/#experiences
 
 ### Can:
 
+- Lesezeit
 - kleine Anzeige der Uhrzeit mit `useNow` von vueuse
 - Animationen
-  - beweglicher Hintergrund (mit Glassmorphism)
+  - beim Umschalten des Dark Modes --> https://matan.io/posts
   - optional: beim scrollen nach unten werden einzelne Artikel reingeschoben
   - Lottie-Animations mit Bildern
 - Kommentar-Funktion
@@ -41,4 +36,5 @@
 - Share-Button
   - copy-url to clipboard
   - ShareAPI
-- Parallax-Effect
+- Parallax-Effect --> ggf. bei Blogeinträgen mit HeroImage
+- Pagination Posts auf Hauptseite

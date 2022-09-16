@@ -6,7 +6,9 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<article class="my-12">
+<article
+  class="p-4 rounded-lg ring-1 shadow-lg shadow-dark-primary/10 hover:shadow-dark-accent/30 ring-dark-primary/10 dark:shadow-light-accent/5 dark:hover:shadow-dark-accent/20 dark:ring-light-primary/5"
+>
   <header>
     <h2 class="title">
       <a href={post.url}> {post.frontmatter.title}</a>
@@ -23,5 +25,4 @@ const { post } = Astro.props;
     </div>
   </header>
   <p class="my-4">{post.frontmatter.description}</p>
-  <a href={post.url}>Read more</a>
 </article>

@@ -16,14 +16,17 @@ allPosts = allPosts.sort(
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
-  <section aria-label="Blog post list">
-    {allPosts.map((p, index) => {
-      return (
-        <div>
-          {index + 1 === allPosts.length && <hr />}
-          <BlogPostPreview post={p} />
-        </div>
-      )
-    })}
+  <section aria-label="Blog post list" class="grid gap-4 mt-4">
+    {
+      allPosts.map((p, index) => {
+        return <BlogPostPreview post={p} />;
+      })
+    }
   </section>
 </BaseLayout>
+
+<style>
+  section {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+</style>
