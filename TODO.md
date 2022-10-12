@@ -21,6 +21,7 @@
 - ~~Barrierefreiheit (Aria Labels etc)~~
 - ~~Draft Mechanismus~~
 - ~~Git Pipeline mit check?~~
+- Gradient Text Überschrift (Viteconf mit Background img oder ohne?)
 
 ### Can:
 
