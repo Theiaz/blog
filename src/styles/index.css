@@ -6,7 +6,7 @@
   }
 
   h1 {
-    @apply text-2xl;
+    @apply text-2xl font-extrabold w-max bg-clip-text text-transparent bg-gradient-to-r from-light-accent to-light-secondary dark:from-dark-secondary dark:to-dark-accent;
   }
 
   h2 {
@@ -53,7 +53,8 @@
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    src: local("sans"), url("/fonts/inter-v12-latin-regular.woff2") format("woff2");
+    src: local("sans"),
+      url("/fonts/inter-v12-latin-regular.woff2") format("woff2");
     font-display: swap;
   }
 

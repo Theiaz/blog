@@ -21,7 +21,8 @@
 - ~~Barrierefreiheit (Aria Labels etc)~~
 - ~~Draft Mechanismus~~
 - ~~Git Pipeline mit check?~~
-- Gradient Text Überschrift (Viteconf mit Background img oder ohne?)
+- ~~Gradient Text Überschrift~~
+- Deploy Edge Functions
 
 ### Can:
 
