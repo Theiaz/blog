@@ -23,6 +23,7 @@
 - ~~Git Pipeline mit check?~~
 - ~~Gradient Text Überschrift~~
 - Deploy Edge Functions
+- Gradient Border für PostPreview
 
 ### Can:
 

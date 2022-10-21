@@ -17,7 +17,7 @@ allPosts = allPosts
 ---
 
 <BaseLayout title={title} description={description}>
-  <section aria-label="Blog post list" class="grid gap-4 mt-4">
+  <section aria-label="Blog post list">
     {
       allPosts.map((p) => {
         return <BlogPostPreview post={p} />;

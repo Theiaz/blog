@@ -6,7 +6,7 @@
   }
 
   h1 {
-    @apply text-2xl font-extrabold w-max bg-clip-text text-transparent bg-gradient-to-r from-light-accent to-light-secondary dark:from-dark-secondary dark:to-dark-accent;
+    @apply text-2xl inline font-extrabold w-max bg-clip-text text-transparent bg-gradient-to-r from-light-secondary to-light-accent  dark:from-dark-secondary dark:to-dark-accent;
   }
 
   h2 {
@@ -27,7 +27,7 @@
 
   button,
   a {
-    @apply underline decoration-2 hover:text-light-accent dark:hover:text-dark-accent hover:underline hover:decoration-light-accent dark:hover:decoration-dark-accent;
+    @apply decoration-2 hover:text-light-accent dark:hover:text-dark-accent hover:underline hover:decoration-light-accent dark:hover:decoration-dark-accent;
   }
 
   a:not(.iconAnchor) {
