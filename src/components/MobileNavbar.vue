@@ -1,5 +1,8 @@
 <template>
   <div class="sm:hidden flex gap-4 justify-end px-4 py-8 sm:p-8">
+    <a href="/" class="iconAnchor mr-auto">
+      <Logo />
+    </a>
     <slot></slot>
     <MobileNavbarButton
       @is-displayed="toggleNavbar($event)"
@@ -10,11 +13,6 @@
     class="sm:hidden bg-light-primary dark:bg-dark-primary absolute h-screen w-screen z-10"
   >
     <nav class="text-2xl list-none flex flex-col items-center gap-8">
-      <li>
-        <a href="/">
-          <span>Logo</span>
-        </a>
-      </li>
       <li>About</li>
       <li>
         <a href="https://github.com/Theiaz" class="flex iconAnchor">
@@ -37,6 +35,7 @@
 <script setup>
 import { ref, watch } from "vue";
 import MobileNavbarButton from "./MobileNavbarButton.vue";
+import Logo from "./icons/Logo.vue";
 
 let isDisplayed = ref(false);
 
