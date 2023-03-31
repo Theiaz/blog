@@ -25,7 +25,7 @@
   - https://web.dev/speedy-css-tip-animated-gradient-text/
   - https://codepen.io/argyleink/pen/KKeNVJJ
 - [ ] Deploy Edge Functions
-- [ ] Gradient Border für PostPreview
+- [ ] Automatic dependency updates
 
 ### Can:
 
