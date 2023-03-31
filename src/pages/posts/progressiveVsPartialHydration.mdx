@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: The difference between progressive and partial hydration
+author: Julian Schäfer
+authorRef: https://github.com/Theiaz
+description: A quick type which helps to understand the difference between partial and progressive hydration
+heroImage:
+heroImageAlt:
+publishDate: 24 October 2022
+draft: false
+keywords: ["hydration", "rendering patterns"]
+illustration: /assets/undraw/undraw_phone_call_re_hx6a.svg
+---
+
+import { Image } from "@astrojs/image/components";
+import img from "../../img/progPartHydration.png";
+
+# The difference between progressive and partial hydration
+
+TL;DR: Progressive Hydration is about the _WHEN_, Partial Hydration is about the _WHAT_
+
+<Image src={img} alt="" />
+
+For some time I'm trying to understand the whole thing about rendering patterns. Hydration is a big part of it. The internet is full of articles and tutorials about hydration and how to implement it. But there is less about what it really is and how to differentiate the different types of hydration.
+
+This article will not be a deep dive, there is other great content available. One of the best has been made by [ryansolid](https://twitter.com/RyanCarniato). However I want to give someone, who tries to understand the whole thing about hydration, a short hint.
+
+## Hydration
+
+Hydration is the process getting a app which is rendered by the server into the same state as it has been client rendered. Therefore, work is done for downloading javascript, attaching eventlisteners to the right DOM nodes and recover state on the clientside. This work costs. You need bandwidth to transfer the data within the javascript to your client. You need CPU time for parsing and running javascript. All of this may slow your app. In the worst case your users needs to deal with the "uncanny valley" effect, where your app seems like it is ready but hydration is not finished at all and therefore it is still not interactive.
+
+To mitigate this issues there are different approaches to optimize hydration.
+
+## Progressive hydration
+
+The first is progressive hydration, which tries to reduce the amount of data which is sent to the client for bootstrapping your application. Instead of fully hydrating your app at once, only chunks of data are sent to the client and parts are hydrated. Those parts may be hydrated if a special event is triggered like clicking a button or if a component comes into the viewport. Your app is ~~building-up~~ hydrating up.
+
+## Partial hydration
+
+In comparison, partial hydration uses the knowledge of your application structure. You as a developer or maybe a smart compiler knows, which part of your application is always static or needs javascript. This knowledge can be used to determine which parts of your application needs to be hydrated.
+
+## Conclusion
+
+If you look at it from an exaggerated point of view, you could take spacetime as an analogy. Progressive hydration is the _WHEN_, represented as time axis. Partial hydration is about _WHAT_ part in your application should be hydrated. Its like describing somewhats position onto the space axis.
+
+## Note
+
+_Please note, that I do not think getting much range with this post and it was a quick type. Therefore, some parts could be improved._

@@ -1,0 +1,119 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: Vue - an appwide error notification system
+author: Julian Schäfer
+authorRef: https://github.com/Theiaz
+description: A simple approach for displaying erro notifications in your vue app
+heroImage:
+heroImageAlt:
+publishDate: 22 April 2022
+draft: false
+keywords: ["vue"]
+value: 2
+illustration: /assets/undraw/undraw_pie_chart_re_bgs8.svg
+---
+
+# Vue - an appwide error notification system
+
+User notifications are important to communicate feedback to the user. They need to be meaningful and descriptive. Most of the time they are triggered by an action. These actions can have different origins like an user input or scheduled jobs and are placed all over the app.
+
+In this post I want to show you our approach to implement an appwide error notification system within vue. The special thing is, that **all notifications can be triggered above the whole app and are handled in one place**.
+
+To follow the steps have a look at the little [demo](https://codesandbox.io/s/appwide-error-notifications-fi5xnl?file=/src/i18n/index.js).
+
+## The demo explained
+
+As you can see, this simple vue app consists of two child components, `Pizza.vue` and `Pasta.vue` which acts as our "business" components. Next to them is the `Notification.vue` component, which is responsible to display error notifications. In real applications there would be many more "business" components or even page components, deeply nested in each other.
+
+This demo demonstrates a common usecase, where a business action is triggered from a user by pressing a button. This action starts an API call which may fail. If so, the user needs feedback. In this example, the call always fails.
+
+For simplicity a mocked API response is used. It has some additional information for the frontend, like an error code and optional data. The response is wrapped to a custom error called `ApiError`.
+
+```js
+// api.js
+const response = {
+  status: 500,
+  ok: false,
+  json: () =>
+    Promise.resolve({ errorCode: "INVALID_PIZZA_ID", errorData: "-1" }),
+};
+
+if (!response.ok) {
+  const msg = `${response.status}: Error fetching pizza with ids '${id}'.`;
+  const error = await response.json();
+  throw new ApiError(msg, error.errorCode, error.errorData);
+}
+```
+
+As a developer you need to decide how you want to handle this failing API request.
+
+```js
+// Pizza.vue
+try {
+  await getPizza(-1);
+} catch (e) {
+  // show a user notification
+  throw new UserNotificationError(e.message, e.errorCode, e.errorData);
+
+  // do not show a user notification and do some other exception handling
+  // throw e
+}
+```
+
+Sometimes it is necessary to notify the user, but not always. Maybe its enough to do something else, like logging the error.
+
+However, if you decided to notify the user, we need to transform our `ApiError` into an `UserNotificationError`. Its purpose is to **separate the concerns between UI and API layer**. Therefore, it wraps all of the data given in `ApiError` and bubbles up the component tree. If there is no need to notify the user, we simply could rethrow the `ApiError` or handle it otherwise.
+
+## `errorCaptured` lifecycle
+
+The `UserNotificationError` will be catched in the upper most component `App.vue` within the [`errorCaptured`](https://vuejs.org/api/options-lifecycle.html#errorcaptured) lifecycle hook.
+
+_I did not know this hook, cause all of the lifecycle pictures you see in the vue docs, does not contain it. As a side note, keep an eye on the API docs!_
+
+```js
+errorCaptured(err) {
+ if (err instanceof UserNotificationError) {
+    this.error = { message: err.message };
+  }
+  return false;
+},
+```
+
+The docs itself says that this hook is _"Called when an error propagating from a descendent component has been captured"_. Hence, our `UserNotificationError` will be catched aswell. If we want to display a notification, we only need to filter for this type or error and enrich our `error` data property inside `App.vue` with the information of `UserNotificationError`. As soon as the value changes, the watcher inside `Notification.vue` triggers and displays the notification.
+
+## Meaningful notification messages
+
+Now we got a global notification system, so we might think we are done? Wrong! I would recommend one last step.
+
+For now, we never used the error information of the API response. It could be possible that our API response message is not that detailed or does not support the languages our frontend supports. Therefore, it is recommended (see [here](https://stackoverflow.com/questions/67290510/whether-all-error-messages-should-come-from-the-backend-in-a-form-that-can-be-sh/67290755#67290755) or [here](https://stackoverflow.com/questions/30109787/internationalization-of-api-error-messages-on-front-end-or-back-end/45350006#45350006)) to use those error information and enrich client side messages with them.
+
+In this example I used [vue-i18n](https://vue-i18n.intlify.dev/) to localize the notification messages. To do so, we only need to use the `errorCode` as a key for our localized messages strings and pass the additional error data (like the id) as parameters.
+
+```js
+const messages = {
+  en: {
+    message: {
+      apiError: {
+        INVALID_PIZZA_ID: "No Pizza with Id {id} could be found.",
+        INVALID_PASTA_ID: "No Pasta with Id {id} could be found.",
+      },
+    },
+  },
+};
+```
+
+```js
+errorCaptured(err) {
+ if (err instanceof UserNotificationError) {
+    this.error = {
+      message: this.$t(`message.apiError.${err.errorCode}`, {id: err.errorData})};
+  }
+  return false;
+},
+```
+
+## Conclusion
+
+That's it. Now we have a simple error notification system where all notifications are handled in one place, the top-level component. Also, we didn't use the API error notification. Instead, we gave the frontend code the ability to use its most appropriate message texts and localize them.
+
+_This is my second article. I would like to welcome any suggestions for improvement, feedback, or pointers to false claims._
