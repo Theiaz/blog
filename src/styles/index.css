@@ -27,7 +27,7 @@
 
   button,
   a {
-    @apply decoration-2 hover:text-light-accent dark:hover:text-dark-accent hover:underline hover:decoration-light-accent dark:hover:decoration-dark-accent;
+    @apply decoration-2 decoration-dotted underline hover:text-light-accent dark:hover:text-dark-accent hover:underline hover:decoration-light-accent dark:hover:decoration-dark-accent;
   }
 
   a:not(.iconAnchor) {
@@ -70,3 +70,15 @@
 
 @tailwind components;
 @tailwind utilities;
+
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  @apply mb-1 mt-6;
+}
+
+.markdown img {
+  @apply my-4;
+}

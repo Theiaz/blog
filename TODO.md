@@ -26,6 +26,7 @@
   - https://codepen.io/argyleink/pen/KKeNVJJ
 - [ ] Deploy Edge Functions
 - [ ] Automatic dependency updates
+- [ ] OpenGraph Vorschau
 
 ### Can:
 
