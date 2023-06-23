@@ -47,3 +47,4 @@
 - [ ] Parallax-Effect --> ggf. bei Blogeinträgen mit HeroImage
 - [ ] Pagination Posts auf Hauptseite
 - [ ] vue-tsc `npm i --save-dev vue-tsc` installieren https://docs.astro.build/en/guides/typescript/#type-imports
+- [ ] Progress Bar/Indicator für Artikel (ggf Kreis um Scrolltotop?)
