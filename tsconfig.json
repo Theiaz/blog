@@ -3,7 +3,7 @@
   "compilerOptions": {
     "skipLibCheck": true, // This will also skip your type checking of all declaration *.d.ts
     // Add type definitions for our Vite runtime.
-    "types": ["vite/client", "@astrojs/image/client"],
+    "types": ["vite/client", "astro/client"],
     "allowJs": true // to keep it easy use JS for vue components. Migrate them later on to TS
   }
 }

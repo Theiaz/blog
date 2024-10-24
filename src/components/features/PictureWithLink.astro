@@ -1,5 +1,5 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Picture } from 'astro:assets';
 
 export interface Props {
   src: string;
@@ -15,7 +15,6 @@ const { src, alt, isExternalSrc } = Astro.props;
     src={src}
     widths={[400, 800]}
     sizes="(max-width: 800px) 100vw, 800px"
-    aspectRatio="16:9"
     alt={alt}
   />
   {
