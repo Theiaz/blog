@@ -20,7 +20,7 @@ const { title, description, lang = "en" } = Astro.props;
         preferredTheme = localStorage.getItem("vueuse-color-scheme");
       } catch (err) {}
       const hasDarkQuery = window.matchMedia(
-        "(prefers-color-scheme: dark)"
+        "(prefers-color-scheme: dark)",
       ).matches;
 
       if (
