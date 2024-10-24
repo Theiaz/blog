@@ -8,7 +8,10 @@
 
 ## Code
 
+- Upgrade tooling (eslint, prettier)
 - Typescript-Support
+- Use correct folder structure
+- Check Picture/Images
 
 ### Bugs
 
