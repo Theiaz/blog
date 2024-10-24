@@ -1,7 +1,24 @@
+<script setup>
+import { ref, watch } from "vue";
+
+let isDisplayed = ref(false);
+
+function toggleNavbar(event) {
+  isDisplayed.value = event.value;
+}
+
+watch(isDisplayed, async (value) => {
+  if (value) {
+    document.querySelector("html").classList.add("overflow-hidden");
+  } else {
+    document.querySelector("html").classList.remove("overflow-hidden");
+  }
+});
+</script>
 <template>
   <div class="sm:hidden flex gap-4 justify-end px-4 py-8 sm:p-8">
     <a href="/" class="iconAnchor mr-auto">
-      <Logo />
+      <TheiazLogo />
     </a>
     <slot></slot>
     <MobileNavbarButton
@@ -31,23 +48,3 @@
     </nav>
   </div>
 </template>
-
-<script setup>
-import { ref, watch } from "vue";
-import MobileNavbarButton from "./MobileNavbarButton.vue";
-import Logo from "./icons/Logo.vue";
-
-let isDisplayed = ref(false);
-
-function toggleNavbar(event) {
-  isDisplayed.value = event.value;
-}
-
-watch(isDisplayed, async (value) => {
-  if (value) {
-    document.querySelector("html").classList.add("overflow-hidden");
-  } else {
-    document.querySelector("html").classList.remove("overflow-hidden");
-  }
-});
-</script>
