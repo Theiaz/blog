@@ -9,7 +9,8 @@
     "format": "prettier --plugin=prettier-plugin-astro --write **/*.astro .",
     "format-check": "prettier --plugin=prettier-plugin-astro --check **/*.astro .",
     "lint": "eslint --fix src",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "sync": "astro sync"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^5.1.2",
