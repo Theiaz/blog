@@ -1,31 +1,15 @@
 ---
-import type { MarkdownLayoutProps } from "astro";
+import type { CollectionEntry } from "astro:content";
 import BlogPost from "../components/BlogPost.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-type Props = MarkdownLayoutProps<{
-  title: string;
-  description: string;
-  publishDate: string;
-  author: string;
-  heroImage: string;
-  heroImageAlt: string;
-  isExternalHeroImg: boolean;
-  href: string;
-}>;
+type Props = CollectionEntry<"blog">["data"];
 
-const { frontmatter } = Astro.props;
+const post = Astro.props;
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
-  <BlogPost
-    author={frontmatter.author}
-    heroImage={frontmatter.heroImage}
-    publishDate={frontmatter.publishDate}
-    heroImageAlt={frontmatter.heroImageAlt}
-    href={frontmatter.href}
-    isExternalHeroImg={frontmatter.isExternalHeroImg}
-  >
+<BaseLayout title={post.title} description={post.description}>
+  <BlogPost {...post}>
     <slot />
   </BlogPost>
 </BaseLayout>

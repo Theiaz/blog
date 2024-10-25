@@ -1,24 +1,9 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import PictureWithLink from "./features/PictureWithLink.astro";
-export interface Props {
-  title?: string;
-  author: string;
-  publishDate: string;
-  heroImage?: string;
-  heroImageAlt?: string;
-  isExternalHeroImg: boolean;
-  href: string;
-}
+type Props = CollectionEntry<"blog">["data"];
 
-const {
-  author,
-  publishDate,
-  heroImage,
-  heroImageAlt = "",
-  isExternalHeroImg,
-  title,
-  href,
-} = Astro.props;
+const { heroImage, publishDate, author, authorRef } = Astro.props;
 ---
 
 <article class="markdown">
@@ -26,17 +11,16 @@ const {
     {
       heroImage && (
         <PictureWithLink
-          src={heroImage}
-          alt={heroImageAlt}
-          isExternalSrc={isExternalHeroImg}
+          src={heroImage.src}
+          alt={heroImage.alt}
+          isExternalSrc={heroImage.isExternal}
         />
       )
     }
-    {title && <h2 class="my-0">{title}</h2>}
     <div class="italic flex gap-2">
       <span>{publishDate}</span>
       <span>|</span>
-      <a href={href}>{author}</a>
+      <a href={authorRef}>{author}</a>
     </div>
   </header>
   <section class="mt-8">

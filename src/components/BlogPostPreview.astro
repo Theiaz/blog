@@ -1,35 +1,51 @@
 ---
+import FormattedDate from "@components/FormattedDate.astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
 const { post } = Astro.props;
 ---
 
 <article
   class="mt-8 pb-4 border-b border-dark-accent/20 dark:border-dark-accent/10 flex items-center gap-4"
 >
-  <img
-    class="h-16 w-20 rounded-full"
-    src={post.frontmatter.illustration}
-    alt=""
-  />
+  {
+    post.data.heroImage && (
+      <img
+        class="h-16 w-20 rounded-full"
+        src={post.data.heroImage.src}
+        alt={post.data.heroImage.alt}
+      />
+    )
+  }
   <div>
     <header>
       <h2 class="title">
-        <a class="no-underline" href={post.url}> {post.frontmatter.title}</a>
+        <a class="no-underline" href={`/blog/${post.slug}/`}
+          >{post.data.title}</a
+        >
       </h2>
 
       <div class="text-sm my-2 italic">
-        <span class="">Published {post.frontmatter.publishDate}</span>
+        <span class=""
+          >Published
+          <FormattedDate date={post.data.publishDate} />
+        </span>
         <span>|</span>
         <span class="">Reading time x</span>
-
         <ul class="flex flex-wrap gap-2">
-          {
-            post.frontmatter.keywords.map((w: unknown) => {
+          <!-- TODO schaefer - Fix this -->
+          <!-- {
+            keywords.map((w: unknown) => {
               <li>#{w}</li>;
             })
-          }
+          } -->
         </ul>
       </div>
     </header>
-    <p class="my-4">{post.frontmatter.description}</p>
+    <p class="my-4">{post.data.description}</p>
   </div>
 </article>
