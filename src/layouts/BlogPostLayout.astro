@@ -1,8 +1,9 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import type { MarkdownLayoutProps } from "astro";
 import BlogPost from "../components/BlogPost.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-export interface Props {
+type Props = MarkdownLayoutProps<{
   title: string;
   description: string;
   publishDate: string;
@@ -11,20 +12,19 @@ export interface Props {
   heroImageAlt: string;
   isExternalHeroImg: boolean;
   href: string;
-}
+}>;
 
-const { title, description, publishDate, author, heroImage, heroImageAlt, isExternalHeroImg, href } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout {title} {description}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
   <BlogPost
-    title={title}
-    author={author}
-    heroImage={heroImage}
-    publishDate={publishDate}
-    heroImageAlt={heroImageAlt}
-    href={href}
-    isExternalHeroImg={isExternalHeroImg}
+    author={frontmatter.author}
+    heroImage={frontmatter.heroImage}
+    publishDate={frontmatter.publishDate}
+    heroImageAlt={frontmatter.heroImageAlt}
+    href={frontmatter.href}
+    isExternalHeroImg={frontmatter.isExternalHeroImg}
   >
     <slot />
   </BlogPost>
