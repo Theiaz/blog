@@ -22,7 +22,7 @@ const { title, description, lang = "en" } = Astro.props;
         console.error("Can not set preferred theme: ", err);
       }
       const hasDarkQuery = window.matchMedia(
-        "(prefers-color-scheme: dark)"
+        "(prefers-color-scheme: dark)",
       ).matches;
 
       if (
