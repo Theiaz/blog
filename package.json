@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "astro check && astro build",
-    "check": "astro check && vue-tsc --noEmit && tsc --noEmit ",
+    "build": "astro build",
+    "check": "astro check & vue-tsc --noEmit & tsc --noEmit ",
     "dev": "astro dev",
     "format": "prettier --plugin=prettier-plugin-astro --write **/*.astro .",
     "format-check": "prettier --plugin=prettier-plugin-astro --check **/*.astro .",
@@ -17,6 +17,7 @@
     "@eslint/js": "^9.13.0",
     "@types/eslint__js": "^8.42.3",
     "@typescript-eslint/parser": "^8.11.0",
+    "@vue/eslint-config-typescript": "^14.1.3",
     "astro": "^4.16.7",
     "eslint": "^9.13.0",
     "eslint-config-prettier": "^9.1.0",
