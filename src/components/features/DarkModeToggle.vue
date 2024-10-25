@@ -4,7 +4,7 @@
     <SunIcon v-else class="hover:scale-110" />
   </button>
 </template>
-<script setup>
+<script setup lang="ts">
 import { useDark, useToggle } from "@vueuse/core";
 import MoonIcon from "../icons/MoonIcon.vue";
 import SunIcon from "../icons/SunIcon.vue";

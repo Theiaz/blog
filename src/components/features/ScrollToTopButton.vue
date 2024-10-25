@@ -12,7 +12,7 @@
   </Transition>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ChevronUpIcon from "../icons/ChevronUpIcon.vue";
 import { ref, onMounted, onUnmounted } from "vue";
 

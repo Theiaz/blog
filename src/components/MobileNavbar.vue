@@ -1,14 +1,14 @@
-<script setup>
+<script setup lang="ts">
 import { ref, watch } from "vue";
 
 let isDisplayed = ref(false);
-
-function toggleNavbar(event) {
+const toggleNavbar = (e: Event) => {
   isDisplayed.value = event.value;
-}
+};
 
 watch(isDisplayed, async (value) => {
   if (value) {
+    // TODO schaefer - use templateRef instead!
     document.querySelector("html").classList.add("overflow-hidden");
   } else {
     document.querySelector("html").classList.remove("overflow-hidden");
