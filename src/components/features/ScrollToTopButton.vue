@@ -20,7 +20,7 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-let isScrolled = ref(false);
+const isScrolled = ref(false);
 function onScroll() {
   isScrolled.value = window.scrollY > 0;
 }

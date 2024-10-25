@@ -18,9 +18,11 @@ const { title, description, lang = "en" } = Astro.props;
       let preferredTheme;
       try {
         preferredTheme = localStorage.getItem("vueuse-color-scheme");
-      } catch (err) {}
+      } catch (err) {
+        console.error("Can not set preferred theme: ", err);
+      }
       const hasDarkQuery = window.matchMedia(
-        "(prefers-color-scheme: dark)",
+        "(prefers-color-scheme: dark)"
       ).matches;
 
       if (
