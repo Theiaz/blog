@@ -11,5 +11,5 @@ export default tseslint.config(
   ...pluginVue.configs["flat/recommended"],
   ...vueTsEslintConfig(),
   ...pluginAstro.configs.recommended,
-  prettierConfig
+  prettierConfig,
 );
