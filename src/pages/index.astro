@@ -1,19 +1,17 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
 import BlogPostPreview from "../components/BlogPostPreview.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 let title = "Blog posts";
-let description = "The perfect starter for your perfect blog.";
+let description = "The perfect starter for your perfect blog."; // TODO schaefer - can this be deleted?
 
-// Data Fetching: List all Markdown posts in the repo.
-let allPosts = await Astro.glob("./posts/*.mdx");
-allPosts = allPosts
-  .filter((post) => !post.frontmatter.draft)
-  .sort(
-    (a, b) =>
-      new Date(b.frontmatter.publishDate).valueOf() -
-      new Date(a.frontmatter.publishDate).valueOf(),
-  );
+const allPosts = await getCollection("blog", ({ data }) => {
+  return data.draft !== true;
+});
+allPosts.sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
 ---
 
 <BaseLayout title={title} description={description}>
