@@ -1,5 +1,6 @@
 {
   "extends": ["astro/tsconfigs/strict", "@vue/tsconfig/tsconfig.json"],
+  "exclude": ["dist"], // exclue astro dist folder from `astro check`, should be fixed with v5 https://github.com/withastro/language-tools/issues/643#issuecomment-2361038516
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -8,4 +9,3 @@
     }
   }
 }
-  
