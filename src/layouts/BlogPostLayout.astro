@@ -13,18 +13,18 @@ export interface Props {
   href: string;
 }
 
-const { content } = Astro.props;
+const { title, description, publishDate, author, heroImage, heroImageAlt, isExternalHeroImg, href } = Astro.props;
 ---
 
-<BaseLayout {content.title} {content.description}>
+<BaseLayout {title} {description}>
   <BlogPost
-    title={content.title}
-    author={content.author}
-    heroImage={content.heroImage}
-    publishDate={content.publishDate}
-    heroImageAlt={content.heroImageAlt}
-    href={content.authorRef}
-    isExternalHeroImg={content.isExternalHeroImg}
+    title={title}
+    author={author}
+    heroImage={heroImage}
+    publishDate={publishDate}
+    heroImageAlt={heroImageAlt}
+    href={href}
+    isExternalHeroImg={isExternalHeroImg}
   >
     <slot />
   </BlogPost>

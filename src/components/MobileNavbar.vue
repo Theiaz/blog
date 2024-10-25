@@ -1,19 +1,12 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref } from "vue";
+import MobileNavbarButton from "./MobileNavbarButton.vue";
+import TheiazLogo from "./icons/TheiazLogo.vue";
 
-let isDisplayed = ref(false);
-const toggleNavbar = (e: Event) => {
-  isDisplayed.value = event.value;
+const isDisplayed = ref(false);
+const toggleNavbar = (e: boolean) => {
+  isDisplayed.value = e;
 };
-
-watch(isDisplayed, async (value) => {
-  if (value) {
-    // TODO schaefer - use templateRef instead!
-    document.querySelector("html").classList.add("overflow-hidden");
-  } else {
-    document.querySelector("html").classList.remove("overflow-hidden");
-  }
-});
 </script>
 <template>
   <div class="sm:hidden flex gap-4 justify-end px-4 py-8 sm:p-8">

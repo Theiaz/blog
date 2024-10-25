@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "astro build",
-    "check": "astro check & vue-tsc --noEmit & tsc --noEmit ",
+    "check": "astro check & vue-tsc --noEmit & tsc --noEmit",
     "dev": "astro dev",
     "format": "prettier --plugin=prettier-plugin-astro --write **/*.astro .",
     "format-check": "prettier --plugin=prettier-plugin-astro --check **/*.astro .",

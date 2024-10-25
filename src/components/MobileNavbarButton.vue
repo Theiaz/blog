@@ -15,15 +15,17 @@
   </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, watch } from "vue";
 
-const emit = defineEmits(["isDisplayed"]);
+const emit = defineEmits<{
+  isDisplayed: [value: boolean];
+}>();
 
 const isDisplayed = ref(false);
 
 watch(isDisplayed, () => {
-  emit("isDisplayed", isDisplayed);
+  emit("isDisplayed", isDisplayed.value);
 });
 </script>
 
