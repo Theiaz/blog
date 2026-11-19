@@ -30,6 +30,8 @@ watch(isDisplayed, () => {
 </script>
 
 <style scoped>
+@reference "../styles/index.css";
+
 .top-stroke,
 .bottom-stroke {
   transition: transform 250ms cubic-bezier(0.2, 0.6, 0.3, 1);

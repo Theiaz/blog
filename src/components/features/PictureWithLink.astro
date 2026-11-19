@@ -11,11 +11,9 @@ const { src, alt, isExternalSrc } = Astro.props;
     sizes="(max-width: 800px) 100vw, 800px"
     alt={alt}
   />
-  {
-    isExternalSrc && (
-      <div class="text-xs p-1 absolute bottom-0 top-0 z-10 backdrop-blur-sm">
-        <a href={src}>©</a>
-      </div>
-    )
-  }
+  {isExternalSrc && <div
+    class="text-xs p-1 absolute bottom-0 top-0 z-10 backdrop-blur-xs"
+  >
+    <a href={src}>©</a>
+  </div>}
 </div>

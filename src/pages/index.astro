@@ -16,11 +16,9 @@ allPosts.sort(
 
 <BaseLayout title={title} description={description}>
   <section aria-label="Blog post list">
-    {
-      allPosts.map((p) => {
-        return <BlogPostPreview post={p} />;
-      })
-    }
+    {allPosts.map((p) => {
+      return <BlogPostPreview post={p} />;
+    })}
   </section>
 </BaseLayout>
 

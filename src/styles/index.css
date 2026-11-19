@@ -1,4 +1,49 @@
-@tailwind base;
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Tailwind v4 only applies `hover:` on hover-capable devices; keep v3 behaviour */
+@custom-variant hover (&:hover);
+
+@theme {
+  --font-*: initial;
+  --font-sans:
+    Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --max-width-prose: 80ch;
+
+  --color-light-primary: #eee;
+  --color-light-secondary: #111;
+  --color-light-accent: #fca311;
+  --color-dark-primary: #111;
+  --color-dark-secondary: #eee;
+  --color-dark-accent: #fca311;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  /* Tailwind v4 uses `cursor: default` for buttons; keep v3 behaviour */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
 
 @layer base {
   html {
@@ -6,7 +51,7 @@
   }
 
   h1 {
-    @apply text-2xl inline font-extrabold w-max bg-clip-text text-transparent bg-gradient-to-r from-light-secondary to-light-accent  dark:from-dark-secondary dark:to-dark-accent;
+    @apply text-2xl inline font-extrabold w-max bg-clip-text text-transparent bg-linear-to-r/srgb from-light-secondary to-light-accent  dark:from-dark-secondary dark:to-dark-accent;
   }
 
   h2 {
@@ -31,12 +76,12 @@
   }
 
   a:not(.iconAnchor) {
-    @apply inline-block relative px-0 py-[1px] bg-transparent;
+    @apply inline-block relative px-0 py-px bg-transparent;
     transition: color ease 0.3s;
   }
 
   a:not(.iconAnchor)::after {
-    @apply absolute bottom-0 h-0 -left-[1.5px] -right-[1.5px] bg-light-accent dark:bg-dark-accent -z-10;
+    @apply absolute bottom-0 h-0 left-[-1.5px] right-[-1.5px] bg-light-accent dark:bg-dark-accent -z-10;
     content: "";
     transition: all ease 0.3s;
   }
@@ -70,9 +115,6 @@
     font-display: swap;
   }
 }
-
-@tailwind components;
-@tailwind utilities;
 
 .markdown h2,
 .markdown h3,

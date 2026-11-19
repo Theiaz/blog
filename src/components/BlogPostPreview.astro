@@ -12,26 +12,21 @@ const { post } = Astro.props;
 <article
   class="mt-8 pb-4 border-b border-dark-accent/20 dark:border-dark-accent/10 flex items-center gap-4"
 >
-  {
-    post.data.heroImage && (
-      <img
-        class="h-16 w-20 rounded-full"
-        src={post.data.heroImage.src}
-        alt={post.data.heroImage.alt}
-      />
-    )
-  }
+  {post.data.heroImage && (
+    <img
+      class="h-16 w-20 rounded-full"
+      src={post.data.heroImage.src}
+      alt={post.data.heroImage.alt}
+    />
+  )}
   <div>
     <header>
       <h2 class="title">
-        <a class="no-underline" href={`/blog/${post.slug}/`}
-          >{post.data.title}</a
-        >
+        <a class="no-underline" href={`/blog/${post.id}/`}>{post.data.title}</a>
       </h2>
 
       <div class="text-sm my-2 italic">
-        <span class=""
-          >Published
+        <span class="">Published
           <FormattedDate date={post.data.publishDate} />
         </span>
         <span>|</span>

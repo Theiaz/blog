@@ -1,18 +1,14 @@
 import mdx from "@astrojs/mdx";
-import tailwind from "@astrojs/tailwind";
 import vue from "@astrojs/vue";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    vue(),
-    tailwind({
-      // needed, cause we are defining our own @layer directive
-      config: {
-        applyBaseStyles: false,
-      },
-    }),
-    mdx(),
-  ],
+  // keep whitespace between elements as before (Astro 7 defaults to "jsx")
+  compressHTML: true,
+  integrations: [vue(), mdx()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

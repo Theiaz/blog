@@ -8,15 +8,13 @@ const { heroImage, publishDate, author, authorRef } = Astro.props;
 
 <article class="markdown">
   <header>
-    {
-      heroImage && (
-        <PictureWithLink
-          src={heroImage.src}
-          alt={heroImage.alt}
-          isExternalSrc={heroImage.isExternal}
-        />
-      )
-    }
+    {heroImage && (
+      <PictureWithLink
+        src={heroImage.src}
+        alt={heroImage.alt}
+        isExternalSrc={heroImage.isExternal}
+      />
+    )}
     <div class="italic flex gap-2">
       <span>{publishDate}</span>
       <span>|</span>
